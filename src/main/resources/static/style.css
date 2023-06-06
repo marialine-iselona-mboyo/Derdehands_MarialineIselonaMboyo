@@ -1,0 +1,23 @@
+.error_text{
+    color: red;
+}
+h1{
+    border: 2px solid olivedrab;
+}
+nav{
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: darkgreen;
+    z-index: 99999999;
+}
+nav ul{
+    list-style: none;
+}
+nav ul li{
+    padding-left: 25px;
+    display: inline;
+}
+nav ul li a{
+    text-decoration: none;
+}
