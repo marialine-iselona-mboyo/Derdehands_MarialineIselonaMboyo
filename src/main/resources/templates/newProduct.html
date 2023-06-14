@@ -6,26 +6,50 @@
     <link rel="stylesheet" th:href="@{style.css}"></li>
 </head>
 <body>
-    <div th:insert="~{menutemplate::navbar}"></div>
+    <div th:insert="~{navbartemplate::navbar}"></div>
 
-    <h1>New Product</h1>
+    <h1>New Product:</h1>
 
     <form method="post" th:action="@{~/newProduct}" th:object="${saveProduct}">
-        Name: <input type="text" th:field="*{name}">
-        <br>
-        Category: <input type="text" th:field="*{category}">
-        <br>
-        Price: <input type="number" th:field="*{askingPrice}">
-        <br>
-        Description: <input type="text" th:field="*{description}">
-        <br>
-        User Information: <input type="email" th:field="*{userList}">
-        <br>
+        <table class="display">
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" th:field="*{name}" placeholder="Name"></td>
+            </tr>
+            <br>
+            <tr>
+                <td>Category:</td>
+                <td><input type="text" th:field="*{category}" placeholder="Category"></td>
+            </tr>
+            <br>
+            <tr>
+                <td>Description:</td>
+                <td><input type="text" th:field="*{description}" placeholder="Description"></td>
+            </tr>
+            <br>
+            <tr>
+                <td>Price:</td>
+                <td><input type="number" th:field="*{askingPrice}" placeholder="Price"></td>
+            </tr>
+            <br>
+            <tr>
+                <td>User Information:</td>
+                <td><input type="email" th:field="*{userList}" placeholder="User Information"></td>
+            </tr>
+            <tr>
+                <td><span th:if="${#fields.hasErrors()}" th:text="${#fields.errors()}" class="error_text"></span></td>
+            </tr>
+        </table>
 
-        <span th:if="${#fields.hasErrors()}" th:text="${#fields.errors()}" class="error_text">
-            <button th:field="submit">Add Product</button>
-        </span>
+        <div class="button-container">
+            <button id="addBtn" th:field="submit">
+                Add Product
+            </button>
+        </div>
+
 
     </form>
+
+    <div th:insert="~{footertemplate::footer}"></div>
 </body>
 </html>

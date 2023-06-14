@@ -7,9 +7,9 @@
 </head>
 <body>
 
-    <div th:insert="~{menutemplate::navbar}"></div>
+    <div th:insert="~{navbartemplate::navbar}"></div>
 
-    <h1>About</h1>
+    <h1>About us</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultricies ultricies faucibus. <br>
         Pellentesque posuere mi libero, eget mollis nulla bibendum sed. <br>
         Sed venenatis iaculis turpis ac congue. Nullam dignissim, nisi quis blandit mollis. <br>
@@ -19,9 +19,13 @@
         Quisque ut gravida quam, id venenatis nulla. <br>
         Morbi at lectus egestas, luctus tellus ut, tempor lacus. In mattis at leo ut ullamcorper.</p>
 
+    <br>
     <h3>Contact Us</h3>
-    <p>Aa street</p><br>
-    <p>1070 Anderlecht</p><br>
-    <p>Tel. 01 234 56 78</p><br>
+    <p>Aa street</p>
+    <p>1070 Anderlecht</p>
+    <p>Tel. 01 234 56 78</p>
+
+    <div th:insert="~{footertemplate::footer}"></div>
+
 </body>
 </html>

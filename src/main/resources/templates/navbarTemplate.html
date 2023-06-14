@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<nav>
+<nav th:fragment="navbar" class="navMenu">
   <ul>
-    <li>Menu Template</li>
-    <li><a th:href="@{~/index}" th:text="#{navbar.index}"></a></li>
-    <li><a th:href="@{~/newProduct}" th:text="#{navbar.newProduct}"></a></li>
-    <li><a th:href="@{~/about}" th:text="#{navbar.about}"></a></li>
+    <li><a th:href="@{~/index}" th:text="#{navbar.index}">Home</a></li>
+    <li><a th:href="@{~/newProduct}" th:text="#{navbar.newProduct}">New Product</a></li>
+    <li><a th:href="@{~/about}" th:text="#{navbar.about}">About</a></li>
   </ul>
 </nav>
 </html>

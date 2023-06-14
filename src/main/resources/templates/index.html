@@ -7,17 +7,19 @@
 </head>
 <body>
 
-    <div th:insert="~{menutemplate::navbar}"></div>
+    <div th:insert="~{navbarTemplate::navbar}"></div>
 
     <h1>Home</h1>
 
-    <p>Hello World vanuit template</p>
 
-    <table>
+    <table id="indexTbl" class="display">
         <thead>
-        <td>Name</td>
-        <td>Price</td>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
         </thead>
+
         <tbody>
         <tr th:each="product : ${products}">
             <td> <span th:text="${product.name}"/>
@@ -28,12 +30,18 @@
                     </li>
                 </ul>
             </td>
-            <td> <span th:text="${product.price}"/> </td>
+            <td> <span th:text="${product.askingprice}"/> </td>
         </tr>
         </tbody>
     </table>
 
 
-    <button th:field="submit">New Product</button>
+    <div class="button-container">
+        <button th:field="submit" id="myButton">
+            <a th:href="@{~/newProduct}" th:text="#{navbar.newProduct}">New Product</a>
+        </button>
+    </div>
+
+    <div th:insert="~{footertemplate::footer}"></div>
 </body>
 </html>

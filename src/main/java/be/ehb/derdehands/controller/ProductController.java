@@ -30,7 +30,7 @@ public class ProductController {
     }
 
     @GetMapping({"/", "/index"})
-    public String showIndex(ModelMap modelMap){
+    public String showIndex(){
         return "index";
     }
 
