@@ -3,6 +3,7 @@ package be.ehb.derdehands.controller;
 import be.ehb.derdehands.dao.ProductDAO;
 import be.ehb.derdehands.dao.UserDAO;
 import be.ehb.derdehands.entities.Product;
+import be.ehb.derdehands.entities.User;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -42,6 +43,21 @@ public class ProductController {
     @ModelAttribute("saveProduct")
     private Product productForForm(){
         return new Product();
+    }
+
+    @GetMapping({"/newUser"})
+    public String newUser(ModelMap modelMap){
+        return "newUser";
+    }
+
+    @PostMapping("/newUser")
+    public String addUser(@Valid @ModelAttribute("addingUser")
+                          User user, BindingResult result){
+        if (result.hasErrors()){
+            return "/newUser";
+        }
+        mUserDAO.save(user);
+        return "redirect:/index";
     }
 
     @GetMapping({"/newProduct"})
